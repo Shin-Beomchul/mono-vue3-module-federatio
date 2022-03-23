@@ -1,0 +1,26 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "esnext",
+        "strict": true,
+        "importHelpers": true, /* 'tslib'에서 헬퍼를 가져올 지 여부 */
+        "moduleResolution": "node", /* 모듈 해석 방법 설정: 'node' (Node.js) 혹은 'classic' (TypeScript pre-1.6). */
+        "skipLibCheck": true,  /* 정의 파일의 타입 확인을 건너 뛸 지 여부 */
+        "esModuleInterop": true, /* 모든 imports에 대한 namespace 생성을 통해 CommonJS와 ES Modules 간의 상호 운용성이 생기게할 지 여부, 'allowSyntheticDefaultImports'를 암시적으로 승인 */
+        "allowSyntheticDefaultImports": true, /* default export이 아닌 모듈에서도 default import가 가능하게 할 지 여부, 해당 설정은 코드 추출에 영향은 주지 않고, 타입확인에만 영향*/
+        "sourceMap": true,  /* '.map' 파일 생성 여부. */
+        "baseUrl": ".", /* non-absolute한 모듈 이름을 처리할 기준 디렉토리 */
+        "noImplicitAny": false, //any타입 금지 여부
+        "lib": [
+            "es2020",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ],
+    },
+    "exclude": [
+        "node_modules"
+    ]
+  }
+  

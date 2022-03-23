@@ -1,0 +1,37 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "applications/*",
+    "components/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1"
+  },
+  "scripts": {
+    "installs": "yarn workspaces foreach --interlaced run install",
+    "serve:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run serve",
+    "build:packages": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run build:packages",
+    "serve:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run serve",
+    "build:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run build:components",
+    "build:dml": "yarn workspace @app/dml build",
+    "build:dml-release": "yarn workspace @app/dml build --mode release",
+    "serve:dml": "yarn workspace @app/dml serve",
+    "serve:dml-release": "yarn workspace @app/dml serve --mode release",
+    "build:dsv": "yarn workspace @app/dsv build",
+    "serve:dsv": "yarn workspace @app/dsv serve",
+    "build:search": "yarn workspace @god/comm-search build",
+    "serve:search": "yarn workspace @god/comm-search serve"
+  },
+  "packageManager": "yarn@3.2.0"
+}
