@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve ",
     "build": "vue-cli-service build",
+    "start": "npx http-server -c-1 -p 21101 ./dist",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e"
   },
@@ -13,6 +14,7 @@
     "@god/mock-service": "^1.0.1",
     "@god/type-utils": "^1.0.1",
     "core-js": "^3.8.3",
+    "http-server": "^0.13.0",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",

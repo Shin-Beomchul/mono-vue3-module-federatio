@@ -58,6 +58,20 @@ D ----> F(dsv:8080)
 ~~~
 
 
+## Just Follow Ke
+  - installs
+ ### dev 환경
+  -  cd ../components/comm-components
+  - yarn build
+  - yarn start
+  - check run 
+
+  -  cd ../applications/dml 
+  - yarn build
+  - yarn start 
+  - check run 
+
+
 
 ## RunTime Integration
  - components/*

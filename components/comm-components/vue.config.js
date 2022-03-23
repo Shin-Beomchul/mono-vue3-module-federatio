@@ -3,12 +3,13 @@ const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "http://localhost:9002/",
+  publicPath: "http://localhost:2200/",
   configureWebpack: {
     plugins: [
       new ModuleFederationPlugin({
-        name: "comm-components",
+        name: "components",
         filename: "remoteEntry.js",
+        library: { type: "var", name: "components" },
         exposes: {
           "./CommFooter": "./src/exposes/CommFooter",
           "./CommGnb": "./src/exposes/CommGnb",
@@ -18,6 +19,6 @@ module.exports = defineConfig({
     ],
   },
   devServer: {
-    port: 9002,
+    port: 2200,
   },
 });

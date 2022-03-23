@@ -2,19 +2,24 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <CommFooter></CommFooter>
+    <CommGnb></CommGnb>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, defineAsyncComponent } from "vue";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import { MockService, MockAPIMode } from "@god/mock-service";
 import { sayHello } from "@god/type-utils";
 import { HelloTypeClass } from "@god/type-utils";
 import { PersistentLruCache, PresitentType } from "@god/lru-cache";
+const CommGnb = defineAsyncComponent(() => import("components/CommGnb"));
 export default defineComponent({
   name: "HomeView",
   components: {
+    CommFooter: defineAsyncComponent(() => import("components/CommFooter")),
+    CommGnb,
     HelloWorld,
   },
   created() {
