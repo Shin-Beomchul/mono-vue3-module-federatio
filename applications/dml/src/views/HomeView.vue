@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <CommGnb></CommGnb>
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <h1>Welcome to DML Module-Federation</h1>
     <CommFooter></CommFooter>
   </div>
 </template>
