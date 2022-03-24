@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <CommGnb></CommGnb>
-    <h1>Welcome to DML Module-Federation</h1>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Welcome to DML Module-Federation" />
     <CommFooter></CommFooter>
   </div>
 </template>

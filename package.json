@@ -19,8 +19,10 @@
     "prettier": "^2.4.1"
   },
   "scripts": {
-    "serve:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run serve",
+    "start:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run start",
     "start:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run start",
+
+    "serve:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run serve",
     "build:packages": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run build:packages",
     "serve:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run serve",
     "build:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run build:components",
