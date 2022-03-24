@@ -28,16 +28,29 @@ Name         | Version    |
 ## module-fedration Enterprise boilerplate 실행&배포과정
 ```mermaid
 graph TB
-A(Start) --build:packages --> B(Build packages/*) 
-B--BuildTime integration utills.ts--> E(dml:21101)
-B --serve:components--> PB(Run Component Servers)
-B--BuildTime integration utills.ts--> F(dsv:8080)
-PB --> C(comm-search:2100) 
-PB --> D(comm-component:2200) 
+A(Start) --build:packages --> B(Build packages/*)
+B--BuildTime integration utills.ts--> E(dml)
+B --serve:components--> PB(Run component Servers)
+B--BuildTime integration utills.ts--> F(dsv)
+PB --> C(comm-search)
+PB --> D(comm-component)
 C ----> E(dml:21101)
-D --RunTime Integration /Button.vue--> E(dml:21101)
-C --RunTime Integration /Search.vue--> F(dsv:8080)
-D ----> F(dsv:8080)
+D --RunTime Integration /CommGnb.vue--> E(dml)
+C --RunTime Integration /SearchPage.vue--> F(dsv)
+D ----> F(dsv)
+
+subgraph localhost:2100
+  C
+  end
+ subgraph localhost:2200
+  D
+  end
+ subgraph localhost:21101
+  E
+  end
+ subgraph localhost:8080
+  F
+  end
 ```
 
 
@@ -58,19 +71,23 @@ D ----> F(dsv:8080)
 ~~~
 
 
-## Just Follow Ke
-  - installs
- ### dev 환경
-  -  cd ../components/comm-components
+## Just Follow Me
+  -  move to Root : cd ../
+```bash
+     - yarn install
+```
+
+  -  move to comm-components : cd ../components/comm-components
+ ```bash
   - yarn build
   - yarn start
-  - check run 
+```
 
-  -  cd ../applications/dml 
+ -  move to dml :  cd ../applications/dml
+```bash
   - yarn build
   - yarn start 
-  - check run 
-
+```
 
 
 ## RunTime Integration
