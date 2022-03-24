@@ -1,15 +1,15 @@
 <template>
   <div class="home">
+    <CommGnb></CommGnb>
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
     <CommFooter></CommFooter>
-    <CommGnb></CommGnb>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import HelloWorld from "@/components/HelloWorld.vue";
 import { MockService, MockAPIMode } from "@god/mock-service";
 import { sayHello } from "@god/type-utils";
 import { HelloTypeClass } from "@god/type-utils";
