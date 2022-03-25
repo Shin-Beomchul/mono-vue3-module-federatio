@@ -54,7 +54,7 @@ subgraph localhost:2100
 ```
 
 
- ## module-fedration프로젝트 구조.
+ ## module-fedration프로젝트 구조.(22.03.25 기준)
 ~~~
 --applications
     ㄴ dml : 쇼핑몰 프로젝트
@@ -71,7 +71,7 @@ subgraph localhost:2100
 ~~~
 
 
-## Just Follow Me
+## Just Follow Me (22.03.25 기준 OK)
   -  move to Root : cd ../
 ```bash
      - yarn install
@@ -100,12 +100,14 @@ subgraph localhost:2100
 
 ## 실무적용과정에서 맞닥드릴 문제들.
  1. 구성원들이 새로운 환경에 이질감을 감당 할 수 있는가.
-    - federation Module Server(components)가 항상 구동 되고 있어야 한다던지.
- 2. 
+    - federation Module Server(components)가 로컬,개발기,스테이지,운영에 항상 구동 되고 있어야 한다던지.
+ 2. 도메인모듈 담당인원이 충분한가.
+    - 소수의 개발자가 어려 모듈을 개발해야 할 경우 개발 복잡도 증가.(MSA Server개발 시 겪는 문제와 같음) 
 
 
  ## 나라면 이렇게 구성 할 것
   1. 작은 단위에 컴포넌트는 BuildTime Integration
+  2. 페이지별, 도메인별 통합된 독립 기능을 제공 할때 
 
 
 ## (!작업중!) 누군가 본다면 이해하려 하지말것.
