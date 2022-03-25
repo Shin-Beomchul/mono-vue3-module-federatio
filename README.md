@@ -58,11 +58,11 @@ subgraph localhost:2100
 ~~~
 --applications
     ㄴ dml : 쇼핑몰 프로젝트
-    ㄴ dsv : 고객센터 프로젝트
+    ㄴ dsv : 고객센터 프로젝트 (추가예정)
 
 --components
     ㄴ comm-components : 공통 컴포넌트
-    ㄴ comm-search : 통합검색 컴포넌트
+    ㄴ comm-search : 통합검색 컴포넌트 (추가예정)
 
 --packages
     ㄴ lru-cache : LruCache 패키지
