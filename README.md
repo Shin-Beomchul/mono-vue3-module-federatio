@@ -1,11 +1,39 @@
+# vue-cli@5.x.x Module Federation
+
+### git Pull then,
+```bash
+ yarn install
+```
+ 
+### comm-components
+Init and start Remote(Provider) app
+```bash
+cd comm-components;
+yarn serve
+```
+
+### App general (host)
+Init and start Host(Consumer) app
+```bash
+cd dml;
+yarn serve;
+```
+After that open
+http://localhost:21101
+
+More information [./app-general/README.md](./app-general/README.md)
+
+
+
 
 ## 목적
 ```
-공식샘플에서 제공되는 코드는 general샘플로 최소설정으로 제공(webpack manual assemble).
-현업에서 주로 사용되는 vue-cli-serve, TypeScript, esLint, Prettier, monoRepository패턴 등을
-적용한 vue3-module-fedration Enterprise boilerplate 구축
+monoRepo vue3-module-fedration Enterprise boilerplate 구축 
+- MonoRepository(yarn-berry)
+- RunTime Integration
+- BuildTime Integration
 ```
-[공식샘플](https://github.com/module-federation/module-federation-examples)
+ 
 
 
 
@@ -70,8 +98,15 @@ subgraph localhost:2100
     ㄴ type-utils : 유틸 패키지
 ~~~
 
+## installs
+- nvm use 16.14.2 or install
+- npm install --global yarn
+- yarn set version berry
+- npm install @vue/cli@5.0.3 -g (@vue/cli 5.0.3 - Optional)
+- npm install typescript@4.5.4 -g
+- yarn plugin import workspace-tools
 
-## Just Follow Me
+## Execute
   -  move to Root : cd ../
 ```bash
      - yarn install
@@ -101,19 +136,8 @@ subgraph localhost:2100
 ## 실무적용과정에서 맞닥드릴 문제들.
  1. 구성원들이 새로운 환경에 이질감을 감당 할 수 있는가.
     - federation Module Server(components)가 항상 구동 되고 있어야 한다던지.
- 2. 
 
-
- ## 나라면 이렇게 구성 할 것
-  1. 작은 단위에 컴포넌트는 BuildTime Integration
-
-
-## (!작업중!) 누군가 본다면 이해하려 하지말것.
-## (!trying!)If someone sees you at work, don't try to understand.
 
 
 
 ## Ref
- - https://github.com/module-federation/fmr
- - Federated Module Reloading : https://medium.com/@A__G__B/introducing-fmr-federated-module-reloading-820ec56256db
-   ext : https://chrome.google.com/webstore/detail/module-federation-live-re/likboddddbpaicmnhpddhhjeclggkejj

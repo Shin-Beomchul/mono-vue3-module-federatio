@@ -1,23 +1,27 @@
 const { defineConfig } = require("@vue/cli-service");
-const ModuleFederationPlugin =
-  require("webpack").container.ModuleFederationPlugin;
+const webpack = require("webpack");
 
 module.exports = defineConfig({
-  transpileDependencies: true,
-  //   publicPath: "http://localhost:21101/",
+  pages: {
+    index: {
+      entry: "./src/index.ts",
+    },
+  },
   configureWebpack: {
     plugins: [
-      new ModuleFederationPlugin({
-        name: "dml",
+      new webpack.container.ModuleFederationPlugin({
+        name: "app_general",
         filename: "remoteEntry.js",
         remotes: {
-          components: "components@http://localhost:2200/remoteEntry.js",
+          remote_comm: "remote_comm@http://localhost:2201/remoteEntry.js",
         },
-        shared: require("./package.json").dependencies,
+        shared: {
+          vue: {
+            singleton: true,
+          },
+        },
       }),
     ],
   },
-  devServer: {
-    port: 21101,
-  },
+  transpileDependencies: true,
 });

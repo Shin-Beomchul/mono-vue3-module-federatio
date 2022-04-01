@@ -1,35 +1,29 @@
-# dml
+# app-general
+
+## Pay attention
+- Fix eslint `import/no-unresolved` [./.eslintrc.js](./.eslintrc.js)
+- Example MF Component in router: [./src/router/index.ts](./src/router/index.ts)
+- Example MF Component in other component: [./src/views/HomeView.vue](./src/views/HomeView.vue)
 
 ## Project setup
-
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
-
 ```
-yarn serve
+npm run serve
 ```
 
 ### Compiles and minifies for production
-
 ```
-yarn build
-```
-
-### Run your unit tests
-
-```
-yarn test:unit
+npm run build
 ```
 
-### Run your end-to-end tests
-
+### Lints and fixes files
 ```
-yarn test:e2e
+npm run lint
 ```
 
 ### Customize configuration
-
 See [Configuration Reference](https://cli.vuejs.org/config/).

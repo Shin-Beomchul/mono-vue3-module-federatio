@@ -5,7 +5,7 @@ module.exports = {
   //   "htmlWhitespaceSensitivity": "css", // HTML 공백 감도 설정
   //   "jsxBracketSameLine": false, // JSX의 마지막 `>`를 다음 줄로 내릴지 여부
   //   "jsxSingleQuote": false, // JSX에 singe 쿼테이션 사용 여부
-  //   "printWidth": 80, //  줄 바꿈 할 폭 길이
+    "printWidth": 120, //  줄 바꿈 할 폭 길이
   //   "proseWrap": "preserve", // markdown 텍스트의 줄바꿈 방식 (v1.8.2)
   //   "quoteProps": "as-needed", // 객체 속성에 쿼테이션 적용 방식
   //   "semi": true, // 세미콜론 사용 여부

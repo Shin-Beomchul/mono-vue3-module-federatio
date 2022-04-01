@@ -5,6 +5,7 @@ module.exports = {
   },
   projects: [
     "./applications/dml",
+    "./applications/dsv",
     "./packages/type-utils",
     "./packages/mock-service",
     "./components/comm-components",

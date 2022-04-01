@@ -4,11 +4,6 @@ module.exports = {
     node: true,
   },
   extends: [
-    // "plugin:vue/vue3-essential",
-    // "eslint:recommended",
-    // "@vue/typescript/recommended",
-    // "@vue/prettier/@typescript-eslint",
-    // "plugin:prettier/recommended",
     "plugin:vue/vue3-essential",
     "eslint:recommended",
     "@vue/typescript/recommended",
@@ -62,11 +57,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/e2e/specs/**",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)",
-      ],
+      files: ["**/__tests__/*.{j,t}s?(x)", "**/tests/e2e/specs/**", "**/tests/unit/**/*.spec.{j,t}s?(x)"],
       excludedFiles: "*.test.js",
       env: {
         mocha: true,
