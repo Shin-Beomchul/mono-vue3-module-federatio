@@ -13,7 +13,7 @@ import { defineAsyncComponent, ref } from "vue";
 const isLoadingComponent = ref(true);
 
 const HelloWorld = defineAsyncComponent(() =>
-  import("remote_comm/HelloWorld.vue").finally(() => {
+  import("common/HelloWorld.vue").finally(() => {
     isLoadingComponent.value = false;
   })
 );

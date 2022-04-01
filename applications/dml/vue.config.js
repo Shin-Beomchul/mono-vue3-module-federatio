@@ -13,7 +13,7 @@ module.exports = defineConfig({
         name: "app_general",
         filename: "remoteEntry.js",
         remotes: {
-          remote_comm: "remote_comm@http://localhost:2201/remoteEntry.js",
+          common: "common@http://localhost:2201/remoteEntry.js",
         },
         shared: {
           vue: {

@@ -25,6 +25,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@app/dml@workspace:applications/dml":
+  version: 0.0.0-use.local
+  resolution: "@app/dml@workspace:applications/dml"
+  dependencies:
+    "@god/lru-cache": ^1.0.0
+    "@god/mock-service": ^1.0.1
+    "@god/type-utils": ^1.0.1
+    "@vue/cli-plugin-babel": 5.0.4
+    "@vue/cli-plugin-router": 5.0.4
+    "@vue/cli-plugin-typescript": 5.0.4
+    "@vue/cli-plugin-vuex": 5.0.4
+    "@vue/cli-service": 5.0.4
+    core-js: ^3.8.3
+    typescript: ~4.5.5
+    vue: ^3.2.13
+    vue-router: ^4.0.3
+    vuex: ^4.0.0
+    webpack: 5.70.0
+  languageName: unknown
+  linkType: soft
+
 "@babel/code-frame@npm:7.12.11":
   version: 7.12.11
   resolution: "@babel/code-frame@npm:7.12.11"
@@ -1337,13 +1358,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@god/lru-cache@workspace:packages/lru-cache":
+"@god/comm-components@workspace:components/comm-components":
+  version: 0.0.0-use.local
+  resolution: "@god/comm-components@workspace:components/comm-components"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": 5.15.0
+    "@typescript-eslint/parser": 5.15.0
+    "@vue/cli-plugin-babel": 5.0.4
+    "@vue/cli-plugin-eslint": 5.0.4
+    "@vue/cli-plugin-router": 5.0.4
+    "@vue/cli-plugin-typescript": 5.0.4
+    "@vue/cli-plugin-vuex": 5.0.4
+    "@vue/cli-service": 5.0.4
+    "@vue/composition-api": ^1.4.9
+    "@vue/eslint-config-airbnb": ^6.0.0
+    "@vue/eslint-config-typescript": ^9.1.0
+    core-js: ^3.8.3
+    eslint: ^7.32.0
+    eslint-plugin-import: ^2.25.3
+    eslint-plugin-vue: ^8.0.3
+    eslint-plugin-vuejs-accessibility: ^1.1.0
+    typescript: ~4.5.5
+    vue: ^3.2.13
+    vue-router: ^4.0.3
+    vuex: ^4.0.0
+    webpack: 5.70.0
+  languageName: unknown
+  linkType: soft
+
+"@god/lru-cache@^1.0.0, @god/lru-cache@workspace:packages/lru-cache":
   version: 0.0.0-use.local
   resolution: "@god/lru-cache@workspace:packages/lru-cache"
   languageName: unknown
   linkType: soft
 
-"@god/mock-service@workspace:packages/mock-service":
+"@god/mock-service@^1.0.1, @god/mock-service@workspace:packages/mock-service":
   version: 0.0.0-use.local
   resolution: "@god/mock-service@workspace:packages/mock-service"
   dependencies:
@@ -1351,7 +1400,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@god/type-utils@workspace:packages/type-utils":
+"@god/type-utils@^1.0.1, @god/type-utils@workspace:packages/type-utils":
   version: 0.0.0-use.local
   resolution: "@god/type-utils@workspace:packages/type-utils"
   dependencies:
@@ -2467,6 +2516,15 @@ __metadata:
     prettier:
       optional: true
   checksum: 70fee2289a4f54ec1be4d46136ee9b9893e31bf5622cead5be06c3dfb83449c3dbe6f8c03404625ccf302d0628ff9e2ea1debfae609d1bfe1d065d8f57c5dba8
+  languageName: node
+  linkType: hard
+
+"@vue/composition-api@npm:^1.4.9":
+  version: 1.4.9
+  resolution: "@vue/composition-api@npm:1.4.9"
+  peerDependencies:
+    vue: ">= 2.5 < 3"
+  checksum: 08853aee4326804f9b8e53d7abc53bbcfc44e1b9df260644656ae39803b4c3427d5deeb87821413a1e82737704447743cf573315f3f4f038c2b29c7cf6cd5910
   languageName: node
   linkType: hard
 
@@ -3710,33 +3768,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"common@workspace:components/comm-components":
-  version: 0.0.0-use.local
-  resolution: "common@workspace:components/comm-components"
-  dependencies:
-    "@typescript-eslint/eslint-plugin": 5.15.0
-    "@typescript-eslint/parser": 5.15.0
-    "@vue/cli-plugin-babel": 5.0.4
-    "@vue/cli-plugin-eslint": 5.0.4
-    "@vue/cli-plugin-router": 5.0.4
-    "@vue/cli-plugin-typescript": 5.0.4
-    "@vue/cli-plugin-vuex": 5.0.4
-    "@vue/cli-service": 5.0.4
-    "@vue/eslint-config-airbnb": ^6.0.0
-    "@vue/eslint-config-typescript": ^9.1.0
-    core-js: ^3.8.3
-    eslint: ^7.32.0
-    eslint-plugin-import: ^2.25.3
-    eslint-plugin-vue: ^8.0.3
-    eslint-plugin-vuejs-accessibility: ^1.1.0
-    typescript: ~4.5.5
-    vue: ^3.2.13
-    vue-router: ^4.0.3
-    vuex: ^4.0.0
-    webpack: 5.70.0
-  languageName: unknown
-  linkType: soft
-
 "commondir@npm:^1.0.1":
   version: 1.0.1
   resolution: "commondir@npm:1.0.1"
@@ -4266,24 +4297,6 @@ __metadata:
   checksum: fa05e18324510d7283f55862f3161c6759a3f2f8dbce491a2fc14c8324c498286c54282c1f0e933cb930da8419b30679389499b919122952a4f8592362ef4615
   languageName: node
   linkType: hard
-
-"dml@workspace:applications/dml":
-  version: 0.0.0-use.local
-  resolution: "dml@workspace:applications/dml"
-  dependencies:
-    "@vue/cli-plugin-babel": 5.0.4
-    "@vue/cli-plugin-router": 5.0.4
-    "@vue/cli-plugin-typescript": 5.0.4
-    "@vue/cli-plugin-vuex": 5.0.4
-    "@vue/cli-service": 5.0.4
-    core-js: ^3.8.3
-    typescript: ~4.5.5
-    vue: ^3.2.13
-    vue-router: ^4.0.3
-    vuex: ^4.0.0
-    webpack: 5.70.0
-  languageName: unknown
-  linkType: soft
 
 "dns-equal@npm:^1.0.0":
   version: 1.0.0

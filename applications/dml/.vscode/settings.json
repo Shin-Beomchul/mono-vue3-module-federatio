@@ -1,0 +1,19 @@
+{
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "vetur.format.options.useTabs": true,
+    "vetur.validation.template": true,
+    "vetur.format.options.tabSize": 4,
+
+    "editor.detectIndentation": false,
+    "editor.suggestSelection": "first",
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true, // eslint code format action on save,
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ]
+}

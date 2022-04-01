@@ -8,7 +8,8 @@ module.exports = {
     "./applications/dsv",
     "./packages/type-utils",
     "./packages/mock-service",
-    "./components/comm-components",
+    "./packages/lru-cache",
+    "./components/common",
     "./components/comm-search",
   ],
 };

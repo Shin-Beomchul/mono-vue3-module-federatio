@@ -14,7 +14,7 @@ module.exports = defineConfig({
     },
     plugins: [
       new webpack.container.ModuleFederationPlugin({
-        name: "remote_comm",
+        name: "common",
         filename: "remoteEntry.js",
         exposes: {
           "./HelloWorld.vue": "./src/components/HelloWorld.vue",

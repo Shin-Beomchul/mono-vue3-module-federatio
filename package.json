@@ -19,6 +19,8 @@
         "prettier": "2.4.1"
     },
     "scripts": {
+        "serve:common": "yarn workspace @god/comm-components serve",
+        "serve:dml": "yarn workspace @app/dml serve",
         "start:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run start",
         "serve:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run serve",
         "serve:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run serve",
@@ -27,7 +29,6 @@
         "build:packages": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run build:packages",
         "build:dml": "yarn workspace @app/dml build",
         "build:dml-release": "yarn workspace @app/dml build --mode release",
-        "serve:dml": "yarn workspace @app/dml serve",
         "serve:dml-release": "yarn workspace @app/dml serve --mode release",
         "build:dsv": "yarn workspace @app/dsv build",
         "serve:dsv": "yarn workspace @app/dsv serve",
