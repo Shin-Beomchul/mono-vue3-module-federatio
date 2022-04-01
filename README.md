@@ -136,18 +136,6 @@ subgraph localhost:2100
 ## 실무적용과정에서 맞닥드릴 문제들.
  1. 구성원들이 새로운 환경에 이질감을 감당 할 수 있는가.
     - federation Module Server(components)가 항상 구동 되고 있어야 한다던지.
- 2. 
-
-
- ## 나라면 이렇게 구성 할 것
-  1. 작은 단위에 컴포넌트는 BuildTime Integration
-
+ 
 
 ## Ref
-
-
-
-## Ref
- - https://github.com/module-federation/fmr
- - Federated Module Reloading : https://medium.com/@A__G__B/introducing-fmr-federated-module-reloading-820ec56256db
-   ext : https://chrome.google.com/webstore/detail/module-federation-live-re/likboddddbpaicmnhpddhhjeclggkejj
