@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import CommPage from "@/components/CommPage.vue"; // @ is an alias to /src
+import CommPage from "@/exposes/CommPage.vue"; // @ is an alias to /src
 
 export default defineComponent({
   name: "HomeView",

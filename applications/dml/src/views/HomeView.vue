@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoadingComponent">Loading HelloWorld.vue</div>
+  <div v-if="isLoadingComponent">Loading CommPage.vue</div>
   <CommPage
     msg="Welcome to Webpack5 Module-Federaion (Vue3 + TypeScript + MonoRepository(yarn-berry)"
     :style="{ height: '750px' }"

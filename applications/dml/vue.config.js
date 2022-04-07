@@ -10,7 +10,7 @@ module.exports = defineConfig({
   configureWebpack: {
     plugins: [
       new webpack.container.ModuleFederationPlugin({
-        name: "app_general",
+        name: "dml",
         filename: "remoteEntry.js",
         remotes: {
           common: "common@http://localhost:2201/remoteEntry.js",

@@ -17,10 +17,10 @@ module.exports = defineConfig({
         name: "common",
         filename: "remoteEntry.js",
         exposes: {
-          "./CommGnb.vue": "./src/components/layout/CommGnb.vue",
-          "./CommFooter.vue": "./src/components/layout/CommFooter.vue",
-          "./CommPage.vue": "./src/components/CommPage.vue",
-          "./AboutView.vue": "./src/views/AboutView.vue",
+          "./CommGnb.vue": "./src/exposes/layout/CommGnb.vue",
+          "./CommFooter.vue": "./src/exposes/layout/CommFooter.vue",
+          "./CommPage.vue": "./src/exposes/CommPage.vue",
+          "./AboutView.vue": "./src/exposes/AboutView.vue",
         },
         shared: {
           vue: {
