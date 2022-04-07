@@ -1,19 +1,17 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-
-    <div v-if="isLoadingComponent">Loading HelloWorld.vue</div>
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <div v-if="isLoadingComponent">Loading HelloWorld.vue</div>
+  <CommPage
+    msg="Welcome to Webpack5 Module-Federaion (Vue3 + TypeScript + MonoRepository(yarn-berry)"
+    :style="{ height: '750px' }"
+  />
 </template>
 
 <script lang="ts" setup>
 import { defineAsyncComponent, ref } from "vue";
 
 const isLoadingComponent = ref(true);
-
-const HelloWorld = defineAsyncComponent(() =>
-  import("common/HelloWorld.vue").finally(() => {
+const CommPage = defineAsyncComponent(() =>
+  import("common/CommPage.vue").finally(() => {
     isLoadingComponent.value = false;
   })
 );

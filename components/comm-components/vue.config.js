@@ -17,7 +17,9 @@ module.exports = defineConfig({
         name: "common",
         filename: "remoteEntry.js",
         exposes: {
-          "./HelloWorld.vue": "./src/components/HelloWorld.vue",
+          "./CommGnb.vue": "./src/components/layout/CommGnb.vue",
+          "./CommFooter.vue": "./src/components/layout/CommFooter.vue",
+          "./CommPage.vue": "./src/components/CommPage.vue",
           "./AboutView.vue": "./src/views/AboutView.vue",
         },
         shared: {

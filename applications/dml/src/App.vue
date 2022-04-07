@@ -1,10 +1,19 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <comm-gnb />
+  <router-view></router-view>
+  <comm-footer />
 </template>
+
+<script lang="ts">
+import { defineComponent, defineAsyncComponent } from "vue";
+const CommGnb = defineAsyncComponent(() => import("common/CommGnb.vue"));
+const CommFooter = defineAsyncComponent(() => import("common/CommFooter.vue"));
+
+export default defineComponent({
+  components: { CommGnb, CommFooter },
+  name: "App",
+});
+</script>
 
 <style>
 #app {
@@ -13,18 +22,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

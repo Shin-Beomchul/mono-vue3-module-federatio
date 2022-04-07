@@ -1,8 +1,15 @@
 <template>
   <div>
     <div align="right" id="comm-gnb">
-      <button @click="onClickHome">Home</button>
-      <button @click="onClickLoginCommSearch">통합검색</button>
+      <button @click="onClickGnbService($event, 'tv')">TV</button>
+      <button @click="onClickGnbService($event, 'mall')">Mall</button>
+      <button @click="onClickGnbService($event, 'edu')">Education</button>
+      <button @click="onClickGnbService($event, 'job')">Job</button>
+      <button @click="onClickGnbService($event, 'software')">Software</button>
+      <button @click="onClickGnbService($event, 'interior')">Interior</button>
+      <button @click="onClickGnbService($event, 'eduonline')">OnlineEdu</button>
+
+      <button @click="onClickLoginCommSearch">Search</button>
       <button @click="onClickLogin">Login</button>
       <select v-model="lang" @change="onChangeLang($event)">
         <option value="ko">한국어</option>
@@ -15,37 +22,37 @@
 <script lang="ts">
 /**
  * @author Shin-BeomChul
- * @description comm Gnb
+ * @description commGnb
  * @emits
+ *  onClickGnbService(serviceId: string)
  *  onClickLogin(event: Event)
  *  onClickLoginCommSearch(event: Event)
  *  onClickHome(event: Event)
  *  onChangeLang(lang: string)
  */
 import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "CommGnb",
 
   setup(props, context) {
+    const onClickGnbService = (event: Event, serviceId: string) => {
+      context.emit("onClickGnbService", serviceId);
+    };
     const onClickLogin = (event: Event) => {
       context.emit("onClickLogin", event);
     };
 
-    const onClickHome = (event: Event) => {
-      context.emit("onClickHome", event);
-    };
     const onClickLoginCommSearch = (event: Event) => {
       context.emit("onClickLoginCommSearch", event);
     };
-    const onChangeLang = (event: any) => {
-      context.emit("onChangeLang", event.target.value);
+    const onChangeLang = (serviceId: string) => {
+      context.emit("onChangeLang", serviceId);
     };
     return {
+      onClickGnbService,
       onClickLogin,
       onClickLoginCommSearch,
       onChangeLang,
-      onClickHome,
     };
   },
   data() {
@@ -57,5 +64,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "../../assets/styles/_layout.scss";
+@import "@/assets/styles/_layout.scss";
 </style>
