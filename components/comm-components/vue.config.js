@@ -21,11 +21,11 @@ module.exports = defineConfig({
           "./CommFooter.vue": "./src/exposes/layout/CommFooter.vue",
           "./CommPage.vue": "./src/exposes/CommPage.vue",
           "./AboutView.vue": "./src/exposes/AboutView.vue",
+          "./GnbStore": "./src/store/pinia/gnb/GnbStore",
         },
         shared: {
-          vue: {
-            singleton: true,
-          },
+          vue: { singleton: true },
+          pinia: { singleton: true },
         },
       }),
     ],

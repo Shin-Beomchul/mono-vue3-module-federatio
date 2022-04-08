@@ -19,21 +19,21 @@
         "prettier": "2.4.1"
     },
     "scripts": {
-        "serve:common": "yarn workspace @god/comm-components serve",
+        "serve:comm": "yarn workspace @god/comm-components serve",
         "serve:dml": "yarn workspace @app/dml serve",
-        "start:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run start",
-        "serve:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run serve",
+        "serve:dml-release": "yarn workspace @app/dml serve --mode release",
+        "serve:dsv": "yarn workspace @app/dsv serve",
+        "serve:dsv-release": "yarn workspace @app/dsv serve --mode release",
+        "serve:search": "yarn workspace @god/comm-search serve",
+        "serve:search-release": "yarn workspace @god/comm-search serve --mode release",
         "serve:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run serve",
+        "serve:apps": "yarn workspaces foreach --parallel --interlaced -v --from '@app/*' run serve",
         "build:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run build:components",
-        "start:components": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run start",
         "build:packages": "yarn workspaces foreach --parallel --interlaced -v --from '@god/*' run build:packages",
         "build:dml": "yarn workspace @app/dml build",
         "build:dml-release": "yarn workspace @app/dml build --mode release",
-        "serve:dml-release": "yarn workspace @app/dml serve --mode release",
         "build:dsv": "yarn workspace @app/dsv build",
-        "serve:dsv": "yarn workspace @app/dsv serve",
-        "build:search": "yarn workspace @god/comm-search build",
-        "serve:search": "yarn workspace @god/comm-search serve"
+        "build:search": "yarn workspace @god/comm-search build"
     },
     "packageManager": "yarn@3.2.0"
 }

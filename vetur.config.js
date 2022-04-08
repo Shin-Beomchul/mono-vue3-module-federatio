@@ -9,7 +9,7 @@ module.exports = {
     "./packages/type-utils",
     "./packages/mock-service",
     "./packages/lru-cache",
-    "./components/common",
+    "./components/comm-components",
     "./components/comm-search",
   ],
 };

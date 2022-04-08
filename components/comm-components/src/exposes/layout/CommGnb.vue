@@ -11,7 +11,7 @@
 
       <button @click="onClickLoginCommSearch">Search</button>
       <button @click="onClickLogin">Login</button>
-      <select v-model="lang" @change="onChangeLang($event)">
+      <select v-model="lang" @change="onChangeLang">
         <option value="ko">한국어</option>
         <option value="en">English</option>
       </select>
@@ -30,7 +30,7 @@
  *  onClickHome(event: Event)
  *  onChangeLang(lang: string)
  */
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "CommGnb",
 
@@ -45,10 +45,12 @@ export default defineComponent({
     const onClickLoginCommSearch = (event: Event) => {
       context.emit("onClickLoginCommSearch", event);
     };
-    const onChangeLang = (serviceId: string) => {
-      context.emit("onChangeLang", serviceId);
+    const lang = ref("en");
+    const onChangeLang = () => {
+      context.emit("onChangeLang", lang.value);
     };
     return {
+      lang,
       onClickGnbService,
       onClickLogin,
       onClickLoginCommSearch,
@@ -56,9 +58,7 @@ export default defineComponent({
     };
   },
   data() {
-    return {
-      lang: "ko",
-    };
+    return {};
   },
 });
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <p>Welcome to Webpack5 Module-Federaion (Vue3 + TypeScript + MonoRepository(yarn-berry)"</p>
+  <p>Hello</p>
 </template>
 
 <script lang="ts">

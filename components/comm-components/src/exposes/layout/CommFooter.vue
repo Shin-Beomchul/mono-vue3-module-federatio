@@ -25,7 +25,7 @@ export default defineComponent({
   name: "CommFooter",
   setup(props, context) {
     const onFooterItemClick = ($event: Event, itemKey: string) => {
-      context.emit("onFooterItemClick", event, itemKey);
+      context.emit("onFooterItemClick", itemKey);
     };
     return {
       onFooterItemClick,

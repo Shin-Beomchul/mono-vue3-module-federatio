@@ -32,7 +32,7 @@ subgraph localhost:2101
 ### just Follow Me
 ## installs
 - nvm use 16.14.2 or install
-- npm install @vue/cli@5.0.3 -g (@vue/cli 5.0.3 - Optional)
+- npm install @vue/cli@5.0.4 -g (Optional)
 - npm install typescript@4.5.4 -g
 - npm install --global yarn
 
@@ -55,12 +55,12 @@ tada!!
 ## use
 Name         | Version    |
 :------      | :------    |
-`webPack`    | ^5.0.0     | 
+`webPack`    | ^5.x     | 
 `Vue`        | ^3.2.13    | 
 `Node`       | 16.14.2    |   
 `yarn berry` | 3.2.0      |  
 `tsc`        | 4.5.4      |
-`@vue/cli`   | 5.0.3      |
+`@vue/cli`   | 5.0.4      |
 
 ## plugins
 - ESLint
