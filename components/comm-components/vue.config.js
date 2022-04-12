@@ -22,6 +22,8 @@ module.exports = defineConfig({
           "./CommPage.vue": "./src/exposes/CommPage.vue",
           "./AboutView.vue": "./src/exposes/AboutView.vue",
           "./GnbStore": "./src/store/pinia/gnb/GnbStore",
+          "./ko.json": "./src/exposes/statics/ko.js",
+          "./en.json": "./src/exposes/statics/en.js",
         },
         shared: {
           vue: { singleton: true },

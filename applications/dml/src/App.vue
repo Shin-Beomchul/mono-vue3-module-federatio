@@ -12,6 +12,8 @@
 
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from "vue";
+import { loadLocaleMessages, loadLocaleMessagesWithRemotes, setI18nLanguage } from "@/i18n/i18n";
+import { i18n } from "@/main";
 const CommGnb = defineAsyncComponent(() => import("common/CommGnb.vue"));
 const CommFooter = defineAsyncComponent(() => import("common/CommFooter.vue"));
 export default defineComponent({
@@ -28,6 +30,8 @@ export default defineComponent({
     },
     /** 언어변경 */
     async onChangeLang(lang: string) {
+      await loadLocaleMessagesWithRemotes(i18n, lang);
+      setI18nLanguage(i18n, lang);
       console.log("언어변경", lang);
     },
     /**통합검색 클릭 시 */

@@ -101,3 +101,9 @@ Name         | Version    |
  
 
 ## Ref
+
+
+
+App(host) <-> Gnb(remote)스토어 공유 정리
+
+Remote에 Store를 

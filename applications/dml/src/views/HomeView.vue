@@ -1,5 +1,7 @@
 <template>
-  <p>I'm From Dml</p>
+  <h4>{{ $t("welcome") }}</h4>
+  <h4>{{ $t("commText") }}</h4>
+
   <div v-if="isLoadingComponent">Loading CommPage.vue</div>
   <CommPage
     msg="Welcome to Webpack5 Module-Federaion (Vue3 + TypeScript + MonoRepository(yarn-berry)"
