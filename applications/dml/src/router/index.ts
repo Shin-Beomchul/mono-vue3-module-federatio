@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -8,14 +8,19 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
-    component: () => import("common/AboutView.vue"),
+    path: "/comm-page",
+    name: "comm-page",
+    component: () => import("common/CommPage.vue"), // Module-Federation Page
+  },
+  {
+    path: "/composable",
+    name: "composable",
+    component: () => import("@/views/Composable.vue"), // composable Example
   },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

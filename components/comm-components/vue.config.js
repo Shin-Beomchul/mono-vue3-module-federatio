@@ -20,8 +20,7 @@ module.exports = defineConfig({
           "./CommGnb.vue": "./src/exposes/layout/CommGnb.vue",
           "./CommFooter.vue": "./src/exposes/layout/CommFooter.vue",
           "./CommPage.vue": "./src/exposes/CommPage.vue",
-          "./AboutView.vue": "./src/exposes/AboutView.vue",
-          "./GnbStore": "./src/store/pinia/gnb/GnbStore",
+          "./CommButton.vue": "./src/exposes/CommButton.vue",
         },
         shared: {
           vue: { singleton: true },

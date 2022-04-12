@@ -45,7 +45,7 @@ export default defineComponent({
     const onClickLoginCommSearch = (event: Event) => {
       context.emit("onClickLoginCommSearch", event);
     };
-    const lang = ref("en");
+    const lang = ref("ko");
     const onChangeLang = () => {
       context.emit("onChangeLang", lang.value);
     };

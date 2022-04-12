@@ -12,33 +12,52 @@
 
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from "vue";
+
+import { loadLocaleMessages, setI18nLanguage } from "@/i18n/i18n";
+import { i18n } from "@/main";
+import { useAppStore } from "./store/pinia/app/AppStore";
+import { useProductStore } from "./store/pinia/product/productStore";
 const CommGnb = defineAsyncComponent(() => import("common/CommGnb.vue"));
 const CommFooter = defineAsyncComponent(() => import("common/CommFooter.vue"));
 export default defineComponent({
   components: { CommGnb, CommFooter },
   name: "App",
-  methods: {
+  setup() {
+    const appStore = useAppStore();
+    const productStore = useProductStore();
     /** GNB서비스 클릭 시 */
-    onClickGnbService(serviceId: string) {
+    const onClickGnbService = (serviceId: string) => {
       console.log("serviceId", serviceId);
-    },
+    };
     /** 로그인 클릭 시 */
-    onClickLogin() {
+    const onClickLogin = () => {
+      appStore.login({ userName: "홍길동", token: "ase@232" });
       console.log("onClickLogin");
-    },
+    };
     /** 언어변경 */
-    async onChangeLang(lang: string) {
-      console.log("언어변경", lang);
-    },
+    const onChangeLang = async (lang: string) => {
+      await loadLocaleMessages(i18n, lang);
+      setI18nLanguage(i18n, lang);
+    };
     /**통합검색 클릭 시 */
-    async onClickLoginCommSearch() {
+    const onClickLoginCommSearch = () => {
       console.log("onClickLoginCommSearch");
-    },
+    };
     /**풋터 클릭 시 */
-    onFooterItemClick(itemKey: string) {
+    const onFooterItemClick = (itemKey: string) => {
       console.log("onFooterItemClick", itemKey);
-    },
+    };
+    return {
+      appStore,
+      productStore,
+      onClickGnbService,
+      onClickLogin,
+      onChangeLang,
+      onClickLoginCommSearch,
+      onFooterItemClick,
+    };
   },
+  methods: {},
 });
 </script>
 

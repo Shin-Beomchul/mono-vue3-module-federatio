@@ -1,18 +1,16 @@
 <template>
-  <p>I'm From Dml</p>
-  <div v-if="isLoadingComponent">Loading CommPage.vue</div>
-  <CommPage
-    msg="Welcome to Webpack5 Module-Federaion (Vue3 + TypeScript + MonoRepository(yarn-berry)"
-    :style="{ height: '750px' }"
-  />
+  <div :style="{ height: '750px' }">
+    <h1>{{ $t("welcome") }}</h1>
+    <div v-if="isLoadingComponent">loading... CommButton.vue</div>
+    <CommButton />
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { defineAsyncComponent, ref } from "vue";
-
 const isLoadingComponent = ref(true);
-const CommPage = defineAsyncComponent(() =>
-  import("common/CommPage.vue").finally(() => {
+const CommButton = defineAsyncComponent(() =>
+  import("common/CommButton.vue").finally(() => {
     isLoadingComponent.value = false;
   })
 );
