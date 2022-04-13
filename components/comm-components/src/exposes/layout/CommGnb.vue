@@ -2,7 +2,7 @@
   <div>
     <div align="right" id="comm-gnb">
       <button @click="onClickGnbService($event, 'tv')">TV</button>
-      <button @click="onClickGnbService($event, 'mall')">Shopping Mall</button>
+      <button @click="onClickGnbService($event, 'mall')">Mall</button>
       <button @click="onClickGnbService($event, 'edu')">Education</button>
       <button @click="onClickGnbService($event, 'job')">Job</button>
       <button @click="onClickGnbService($event, 'software')">Software</button>

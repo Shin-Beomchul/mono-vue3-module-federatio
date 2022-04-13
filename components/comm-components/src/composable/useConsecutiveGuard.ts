@@ -1,6 +1,6 @@
 /**
   @author Shin-BeomChul
-  @description 이전 호출 이후 delay가 만료 되면 @func 가 즉시 호출, delay만료 전에 중복 호출 시 무시.
+  @description 이전 호출 이후 delay가 만료 되면 @func 가 즉시 호출, delay만료 전 호출 시 무시.
   @whenToUse 버튼 연타 방지
 
    <=== Template ===>

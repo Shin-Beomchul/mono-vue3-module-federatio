@@ -2,9 +2,9 @@
  * @author  Shin-BeomChul
  * @description delay만큼 지연 후 @func 호출. 중복 호출 시 무시.(단 immediate가 true인 경우 최초 1회 즉시실행.)
  *
- * @param {object} params 2개의 파라미터
- * @param params.delay 지연시간 (ms)
- * @param params.immediate true : 최초 1회 즉시실행.
+ * @param {object} param 2개의 파라미터
+ * @param param.delay 지연시간 (ms)
+ * @param param.immediate true : 최초 1회 즉시실행.
  * @param {function} func delay시간 이후 실행될 함수
  * @returns {function} debouncedFn
  */
