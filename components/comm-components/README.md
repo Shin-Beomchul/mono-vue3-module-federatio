@@ -1,13 +1,12 @@
-# app-exposes
+# comm-components
 
 ### Notice
-Ignore path `/auto/`
 ```bash
   App running at:
-  - Local:   http://localhost:8082/auto/ 
+  - Local:   http://localhost:2201
 ```
 
-http://localhost:8082/ - is actual
+http://localhost:2201/ - is actual
 ([fix here](https://github.com/vuejs/vue-cli/pull/7005)).
 
 ## Project setup

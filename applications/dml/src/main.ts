@@ -5,6 +5,7 @@ import store from "./store/vuex";
 import { createPinia } from "pinia";
 import { setupI18n } from "./i18n/i18n";
 import koMessages from "@/i18n/locales/ko.json";
+import enMessages from "@/i18n/locales/en.json";
 import PiniaLogger from "pinia-logger";
 
 /** i18n */
@@ -14,7 +15,7 @@ const i18n = setupI18n({
   locale: process.env.VUE_APP_I18N_LOCALE,
   fallbackLocale: process.env.VUE_APP_I18N_LOCALE,
   messages: {
-    ko: { ...koMessages }, // Default language only, other languages is lazy loading.
+    en: { ...enMessages }, // Default language only, other languages is lazy loading.
   },
 });
 export { i18n };

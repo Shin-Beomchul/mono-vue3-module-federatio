@@ -23,7 +23,7 @@ import { useDebounceFn, useConsecutiveGuard } from "@/composable";
 import { MockService } from "@god/mock-service/lib";
 export default defineComponent({
   components: {},
-  name: "ComposableView",
+  name: "ComposableExample",
   props: {
     msg: String,
   },
@@ -53,7 +53,7 @@ export default defineComponent({
 
   data() {
     return {
-      homeMessage: "Composable",
+      homeMessage: "ComposableExample",
     };
   },
   methods: {},

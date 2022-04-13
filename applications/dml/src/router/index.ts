@@ -5,7 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: HomeView, // host Page
   },
   {
     path: "/comm-page",
@@ -15,7 +15,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/composable",
     name: "composable",
-    component: () => import("@/views/Composable.vue"), // composable Example
+    component: () => import("@/views/examples/ComposableExample.vue"), // composableExample
+  },
+  {
+    path: "/build-integration",
+    name: "build-integration",
+    component: () => import("@/views/examples/BuildTimeIntegrationExample.vue"), // BuildTimeIntegrationExample
+  },
+  {
+    path: "/store",
+    name: "store",
+    component: import(/* webpackChunkName: "piniaStore" */ "@/views/examples/PiniaStoreExample.vue"),
   },
 ];
 

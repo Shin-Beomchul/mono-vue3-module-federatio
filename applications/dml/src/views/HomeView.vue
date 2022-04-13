@@ -7,6 +7,10 @@
 </template>
 
 <script lang="ts" setup>
+/**
+ * @author Shin-BeomChul
+ * @description DML Home
+ */
 import { defineAsyncComponent, ref } from "vue";
 const isLoadingComponent = ref(true);
 const CommButton = defineAsyncComponent(() =>

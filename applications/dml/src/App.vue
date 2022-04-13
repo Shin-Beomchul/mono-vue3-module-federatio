@@ -11,6 +11,10 @@
 </template>
 
 <script lang="ts">
+/**
+ * @author Shin-BeomChul
+ * @description DML App(host)
+ */
 import { defineComponent, defineAsyncComponent } from "vue";
 
 import { loadLocaleMessages, setI18nLanguage } from "@/i18n/i18n";

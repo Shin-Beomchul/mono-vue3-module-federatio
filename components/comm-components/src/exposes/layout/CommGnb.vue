@@ -2,7 +2,7 @@
   <div>
     <div align="right" id="comm-gnb">
       <button @click="onClickGnbService($event, 'tv')">TV</button>
-      <button @click="onClickGnbService($event, 'mall')">Mall</button>
+      <button @click="onClickGnbService($event, 'mall')">Shopping Mall</button>
       <button @click="onClickGnbService($event, 'edu')">Education</button>
       <button @click="onClickGnbService($event, 'job')">Job</button>
       <button @click="onClickGnbService($event, 'software')">Software</button>
@@ -45,7 +45,7 @@ export default defineComponent({
     const onClickLoginCommSearch = (event: Event) => {
       context.emit("onClickLoginCommSearch", event);
     };
-    const lang = ref("ko");
+    const lang = ref("en");
     const onChangeLang = () => {
       context.emit("onChangeLang", lang.value);
     };
