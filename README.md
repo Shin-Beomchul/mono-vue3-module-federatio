@@ -45,11 +45,17 @@ subgraph localhost:2101
  yarn install
  yarn serve:comm
  yarn serve:dml
-```
- 
+``` 
 After that open
 http://localhost:21101
 tada!!
+
+![run-fps-low-min](https://user-images.githubusercontent.com/25116734/163080184-28710164-fac8-496a-bbd5-985538dabe17.gif)
+
+
+## CommGnb Hot Reload Update(remote)
+ test : update Gnb Text Mall -> Shopping Mall
+![update-short-min](https://user-images.githubusercontent.com/25116734/163081119-7ac03d17-32d8-4e28-9705-9d30fc2e8b54.gif)
 
 
 ## use
@@ -68,23 +74,21 @@ Name         | Version    |
 - Prettier
 
 
- ## module-fedration프로젝트 구조.(22.03.25 기준)
+ ## module-fedration with MonoRepository Structure.(22.03.25)
 ~~~
 --applications
-    ㄴ dml : 쇼핑몰 프로젝트
-    ㄴ dsv : 고객센터 프로젝트 (추가예정)
+    ㄴ dml : Shopping Mall Project 
+    ㄴ dsv : customer Service Project (leave it blank for you try it)
 
 --components
     ㄴ comm-components : 공통 컴포넌트
-    ㄴ comm-search : 통합검색 컴포넌트 (추가예정)
+    ㄴ comm-search : 통합검색 컴포넌트 (leave it blank for you try it)
 
 --packages
     ㄴ lru-cache : LruCache 패키지
     ㄴ mock-service : MockService 패키지
     ㄴ type-utils : 유틸 패키지
 ~~~
-
-
 
 ## RunTime Integration
  - components/*
@@ -93,11 +97,12 @@ Name         | Version    |
  - packages/*
 
 
-
-## 실무적용과정에서 맞닥드릴 문제들.
- 1. 구성원들이 새로운 환경에 이질감을 감당 할 수 있는가.
+## 적용과정에서 맞닥드릴 문제들.
+ - remote의 i18n 공유 및 처리 -> 해결
+ - 무엇을 어디까지 공유 해야 할까.
+ - 구성원들이 새로운 환경에 대한 이질감
     - federation Module Server(components)가 항상 구동 되고 있어야 한다던지.
- 2. 조직내에서 서비스별 체계나 규약없이 모듈 공유 시 관리가 어려워 질 수 있다.  
+ - 조직내에서 서비스별 컴포넌트 공유 규칙 필요
  
 
 ## Ref
