@@ -1,4 +1,4 @@
-import { onMounted, onUnmounted, reactive, toRefs } from "@vue/composition-api";
+import { onMounted, onUnmounted, reactive, toRefs } from "vue";
 const useResize = (el) => {
   const state = reactive({
     screenWidth: 0,

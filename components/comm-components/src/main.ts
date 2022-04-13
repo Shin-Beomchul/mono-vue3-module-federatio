@@ -4,4 +4,7 @@ import router from "./router";
 import store from "./store/vuex";
 import { createPinia } from "pinia";
 const pinia = createPinia();
-createApp(App).use(store).use(pinia).use(router).mount("#app");
+import vuetify from "./plugins/vuetify";
+import { loadFonts } from "./plugins/webfontloader";
+loadFonts();
+createApp(App).use(store).use(vuetify).use(pinia).use(router).mount("#app");

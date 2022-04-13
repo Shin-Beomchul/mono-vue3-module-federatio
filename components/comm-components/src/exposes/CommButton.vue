@@ -1,3 +1,3 @@
 <template>
-  <button>CommButton</button>
+  <v-btn>Comm-Button</v-btn>
 </template>

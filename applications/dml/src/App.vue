@@ -9,7 +9,6 @@
     <v-main>
       <router-view />
     </v-main>
-    <v-btn>왜 블랭크지?</v-btn>
     <comm-footer id="footer" @onFooterItemClick="onFooterItemClick" />
   </v-app>
   <!-- Footer -->
