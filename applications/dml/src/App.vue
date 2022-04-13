@@ -1,13 +1,18 @@
 <template>
-  <comm-gnb
-    @onClickGnbService="onClickGnbService"
-    @onClickLogin="onClickLogin"
-    @onClickLoginCommSearch="onClickLoginCommSearch"
-    @onChangeLang="onChangeLang"
-  />
-  <router-view></router-view>
+  <v-app>
+    <comm-gnb
+      @onClickGnbService="onClickGnbService"
+      @onClickLogin="onClickLogin"
+      @onClickLoginCommSearch="onClickLoginCommSearch"
+      @onChangeLang="onChangeLang"
+    />
+    <v-main>
+      <router-view />
+    </v-main>
+    <v-btn>왜 블랭크지?</v-btn>
+    <comm-footer id="footer" @onFooterItemClick="onFooterItemClick" />
+  </v-app>
   <!-- Footer -->
-  <comm-footer id="footer" @onFooterItemClick="onFooterItemClick" />
 </template>
 
 <script lang="ts">

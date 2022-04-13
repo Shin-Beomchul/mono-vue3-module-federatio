@@ -1,3 +1,5 @@
+import vuetify from "./plugins/vuetify";
+import { loadFonts } from "./plugins/webfontloader";
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
@@ -7,7 +9,7 @@ import { setupI18n } from "./i18n/i18n";
 import koMessages from "@/i18n/locales/ko.json";
 import enMessages from "@/i18n/locales/en.json";
 import PiniaLogger from "pinia-logger";
-
+loadFonts();
 /** i18n */
 const i18n = setupI18n({
   globalInjection: true,
@@ -28,4 +30,4 @@ pinia.use(
     disabled: process.env.VUE_APP_MODE === "production",
   })
 );
-createApp(App).use(store).use(i18n).use(pinia).use(router).mount("#app");
+createApp(App).use(store).use(vuetify).use(i18n).use(pinia).use(router).mount("#app");

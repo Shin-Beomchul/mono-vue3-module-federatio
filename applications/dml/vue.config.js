@@ -7,6 +7,7 @@ module.exports = defineConfig({
       entry: "./src/index.ts",
     },
   },
+
   configureWebpack: {
     plugins: [
       new webpack.container.ModuleFederationPlugin({
@@ -23,5 +24,12 @@ module.exports = defineConfig({
       }),
     ],
   },
+
   transpileDependencies: true,
+
+  pluginOptions: {
+    vuetify: {
+			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
+		}
+  }
 });

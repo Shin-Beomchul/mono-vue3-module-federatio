@@ -1,21 +1,18 @@
 <template>
-  <div :style="{ height: '750px' }">
-    <h1>{{ $t("welcome") }}</h1>
-    <div v-if="isLoadingComponent">loading... CommButton.vue</div>
-    <CommButton />
-  </div>
+  <hello-world />
 </template>
 
-<script lang="ts" setup>
-/**
- * @author Shin-BeomChul
- * @description DML Home
- */
-import { defineAsyncComponent, ref } from "vue";
-const isLoadingComponent = ref(true);
-const CommButton = defineAsyncComponent(() =>
-  import("common/CommButton.vue").finally(() => {
-    isLoadingComponent.value = false;
-  })
-);
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+// Components
+import HelloWorld from '../components/HelloWorld.vue';
+
+export default defineComponent({
+  name: 'HomeView',
+
+  components: {
+    HelloWorld,
+  },
+});
 </script>
