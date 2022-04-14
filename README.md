@@ -70,8 +70,8 @@ Name         | Version    |
 
 ## plugins
 - ESLint
-- Vetur
-- Prettier
+- Volar v0.34.6
+- gitLens
 
 
  ## module-fedration with MonoRepository Structure.(22.03.25)
