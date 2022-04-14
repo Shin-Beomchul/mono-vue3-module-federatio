@@ -1,0 +1,54 @@
+@import '_variables';
+@import '_vuetify';
+
+/* Reset */
+html, body, div, ul, ol, dl, li, dt, dd, p, h1, h2, h3, h4, h5, h6, table, thead, tbody, tr, th, td, caption, address,
+canvas, details, figure, figcaption, footer, header, menu, nav, section, article, aside,
+form, fieldset, button, select, textarea, input, fieldset, legend, label, a, span, strong, em, address, dfn, small, i, b, ::before, ::after 
+{ margin: 0;  padding: 0;  border: 0;  list-style: none;  box-sizing: border-box;  -webkit-box-sizing: border-box; letter-spacing: -0.5px;  line-height: 1.3;}
+body, html { width: 100%; height: 100%; }
+html {overflow: auto !important;}
+[hidden] { display: none; }
+button { cursor:pointer; }
+fieldset, iframe { width: 100%; }
+img, frame, iframe, fieldset { border:0; }
+a { text-decoration: none; }
+table { width: 100%;  border-spacing: 0;  border-collapse: collapse; }
+caption { height: 1px;  overflow: hidden; }
+legend { position: absolute;  left: -9999rem;  top: -9999rem; }
+body {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+
+/*Font - SpoqaHanSansNeo*/
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:700;font-display:swap;src:local('Spoqa Han Sans Neo Bold'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:500;font-display:swap;src:local('Spoqa Han Sans Neo Medium'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:400;font-display:swap;src:local('Spoqa Han Sans Neo Regular'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:300;font-display:swap;src:local('Spoqa Han Sans Neo Light'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:100;font-display:swap;src:local('Spoqa Han Sans Neo Thin'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.ttf') format('truetype')}
+
+/* type=number remove arrows */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+input[type=number] {-moz-appearance: textfield;}
+
+/* Link Setting */
+.v-application--wrap {min-width: 1902px;}
+.v-application {
+    a { color: inherit !important; }
+    a.exact-active {color: $primary !important;}
+    ul, ol {padding-left: 0;}
+    p {margin-bottom: 0 !important;}
+}
+
+/* Media Query */
+@media screen and (min-width: 1904px) {
+    .container, .inner, .v-main__wrap { width: 1792px !important; max-width: 1792px !important;  min-width: 1366px  !important; margin: 0 auto !important; }
+}
+@media screen and (max-width: 1903px) {
+    .container, .inner, .v-main__wrap  { width: calc(100% - 112px) !important; max-width: calc(100% - 112px)!important;  min-width:1366px  !important; margin: 0 auto !important; }
+}
+.content-main {
+    .v-main__wrap { width: 100%!important; max-width:  100% !important;  min-width:  100% !important; }
+    .container { width: 100%!important; max-width: 100% !important; }
+}
+
+/*footer*/
+.footer-logo .v-icon__component { fill: #ea6001; }

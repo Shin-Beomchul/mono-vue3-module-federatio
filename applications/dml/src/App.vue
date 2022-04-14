@@ -6,8 +6,10 @@
       @onClickLoginCommSearch="onClickLoginCommSearch"
       @onChangeLang="onChangeLang"
     />
-    <v-main>
-      <router-view />
+    <v-main class="content-main">
+      <v-container fluid class="pa-0" id="app-main-container">
+        <router-view />
+      </v-container>
     </v-main>
     <comm-footer id="footer" @onFooterItemClick="onFooterItemClick" />
   </v-app>
@@ -34,8 +36,8 @@ export default defineComponent({
     const appStore = useAppStore();
     const productStore = useProductStore();
     /** GNB서비스 클릭 시 */
-    const onClickGnbService = (serviceId: string) => {
-      console.log("serviceId", serviceId);
+    const onClickGnbService = (menu: { title; target }) => {
+      console.log("serviceId", menu);
     };
     /** 로그인 클릭 시 */
     const onClickLogin = () => {
