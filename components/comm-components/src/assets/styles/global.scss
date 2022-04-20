@@ -1,0 +1,9 @@
+/* Reset */
+#remote-global-sample { background: #d53d3d; }
+
+/* Font - SpoqaHanSansNeo */
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:700;font-display:swap;src:local('Spoqa Han Sans Neo Bold'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:500;font-display:swap;src:local('Spoqa Han Sans Neo Medium'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:400;font-display:swap;src:local('Spoqa Han Sans Neo Regular'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:300;font-display:swap;src:local('Spoqa Han Sans Neo Light'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.ttf') format('truetype')}
+@font-face{font-family:'SpoqaHanSansNeo';font-weight:100;font-display:swap;src:local('Spoqa Han Sans Neo Thin'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff2') format('woff2'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff') format('woff'), url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.ttf') format('truetype')}

@@ -21,10 +21,16 @@ module.exports = defineConfig({
           "./CommFooter.vue": "./src/exposes/layout/CommFooter.vue",
           "./CommPage.vue": "./src/exposes/CommPage.vue",
           "./CommButton.vue": "./src/exposes/CommButton.vue",
+          "./global.scss": "./src/assets/styles/global.scss",
         },
         shared: {
           vue: { singleton: true },
           pinia: { singleton: true },
+        },
+        devServer: {
+          headers: {
+            "Access-Control-Allow-Origin": "*", // product then, nginx
+          },
         },
       }),
     ],

@@ -1,3 +1,3 @@
 <template>
-  <button>CommButton</button>
+  <button id="remote-global-sample">CommButton</button>
 </template>
