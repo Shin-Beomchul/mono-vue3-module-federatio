@@ -106,4 +106,12 @@ Name         | Version    |
  - 조직내에서 서비스별 컴포넌트 공유 규칙 필요
  
 
+ ## 주의사항
+  vuetify3 <-> Master Branch 전한 시 다음과정 반드시 수행 할것.
+   1. root > node_modules 삭제 
+   2. root > yarn install 
+   3. yarn serve:comm
+   4. yarn serve:dml 
+
+
 ## Ref
