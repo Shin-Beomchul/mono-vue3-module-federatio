@@ -27,13 +27,13 @@ module.exports = defineConfig({
           vue: { singleton: true },
           pinia: { singleton: true },
         },
-        devServer: {
-          headers: {
-            "Access-Control-Allow-Origin": "*", // product then, nginx
-          },
-        },
       }),
     ],
   },
   transpileDependencies: true,
+  devServer: {
+    headers: {
+      "Access-Control-Allow-Origin": "*", // product then, nginx
+    },
+  },
 });
