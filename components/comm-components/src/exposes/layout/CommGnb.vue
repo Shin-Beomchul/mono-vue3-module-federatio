@@ -1,96 +1,101 @@
 <template>
-  <div class="gnb-wrap">
-    <header class="inner">
-      <v-row class="gnb-menus-wrap">
-        <v-col cols="auto" class="pl-0 pr-10">
-          <router-link to="/mall/main">
-            <!-- <v-img src="@/assets/images/logo-denall.png" alt="denall" max-width="75" /> -->
-          </router-link>
-        </v-col>
-        <v-col class="gnb-menus">
-          <v-card flat color="transparent">
-            <template v-for="(menu, index) in page.globalMenus" :key="index">
-              <v-btn
-                text
-                class="gnb-menus-btn"
-                @click="onClickGnbService($event, menu)"
-                :class="{ 'v-btn--active': menu.active }"
-                :target="menu.target"
-                >{{ menu.title }}
-              </v-btn>
-            </template>
-          </v-card>
-        </v-col>
-        <v-col cols="auto" class="gnb-personal">
-          <v-card flat color="transparent" class="avatar">
-            <v-card flat color="transparent" v-if="'' == page.gnb.avatar.userName">
-              <v-btn text @click="signin()">로그인</v-btn>
-              <v-btn text>회원가입</v-btn>
-            </v-card>
-            <v-card v-else flat color="transparent" class="d-flex align-center">
-              <v-card flat color="transparent" class="ml-4 mt-2" min-width="40"
-                ><v-icon>mdi-bell-outline</v-icon><v-badge color="primary" offset-y="-3" offset-x="8" content="99+"
-              /></v-card>
-              <v-menu offset-y style="display: none">
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn text v-bind="attrs" v-on="on" class="pa-1 ml-2">
-                    <v-card flat color="transparent" class="d-flex flex-column justify-start align-start">
-                      <span>{{ page.gnb.avatar.userName }}</span>
-                      <span class="dental-name">킹스치과</span>
-                    </v-card>
-                    <v-icon class="icon-arrow-down-outline" size="12">mdi-chevron-down</v-icon></v-btn
-                  >
-                </template>
-                <v-list dense class="pa-0">
-                  <v-list-item class="pa-1"><v-btn text>나의활동내역</v-btn></v-list-item>
-                  <v-list-item class="pa-1"><v-btn text>계정정보관리</v-btn></v-list-item>
-                  <v-list-item class="pa-1"><v-btn text @click="logout()">로그아웃</v-btn></v-list-item>
-                </v-list>
-              </v-menu>
-            </v-card>
-          </v-card>
-          <v-card flat color="transparent">
-            <v-btn text>전자장부</v-btn>
-          </v-card>
-        </v-col>
-      </v-row>
-    </header>
+  <div class="comm-gnb-wrap" :class="page.gnb.activeChannel">
+    <div class="comm-gnb-inner">
+      <!--global brand -->
+      <div class="comm-gnb-brand">
+        <router-link to="/">
+          <img :src="exposeAssertsPath + '/images/common/logo-god.png'" alt="denall logo" />
+        </router-link>
+      </div>
+
+      <!--global service -->
+      <div class="comm-gnb-menus">
+        <template v-for="(menu, index) in page.globalMenus" :key="index">
+          <v-btn
+            variant="text"
+            size="large"
+            @click="onClickGnbService($event, menu)"
+            :class="menu.active == true ? 'v-btn--active ' + menu.channel : ''"
+            :target="menu.target"
+            >{{ menu.title }}
+          </v-btn>
+        </template>
+      </div>
+
+      <!--global personal -->
+      <div class="comm-gnb-personal">
+        <template v-if="'' == page.gnb.avatar.userName">
+          <v-icon>mdi-bell-outline</v-icon><v-badge color="primary" offset-y="-14" offset-x="2" content="99+" />
+        </template>
+        <template v-else>
+          <v-btn variant="text" @click="onClickLogin">로그인</v-btn>
+          <v-btn variant="text">회원가입</v-btn>
+        </template>
+        <v-btn variant="text">전자장부</v-btn>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+/**
+ * @author Shin-BeomChul
+ * @description commGnb
+ * @emits
+ *  onClickGnbService(menu: { title: string, target: string, channel: ChannelType, active: boolean })
+ *  onClickLogin(event: Event)
+ *  onClickLoginCommSearch(event: Event)
+ */
+import { defineComponent, PropType, ref, toRefs } from "vue";
+import { exposeAssertsPath } from "@/composables/fedrationUtil";
+import { ChannelType, Values } from "@/types/comm-types";
 export default defineComponent({
   name: "ComGnb",
-  data() {
-    return {
-      page: {
-        globalMenus: [
-          { title: "TV", target: "_self" },
-          { title: "Mall" },
-          { title: "Education", target: "_self" },
-          { title: "Job", target: "_self" },
-          { title: "Software", target: "_self" },
-          { title: "Interior", target: "_self", active: true },
-          { title: "onLineEdu", target: "_self" },
-        ],
-        gnb: {
-          brand: { dentist: { show: false } },
-          avatar: { userName: "홍길동" },
-          userMenu: [{ title: "마이페이지" }, { title: "계정정보관리" }, { title: "로그아웃" }],
-        },
+  props: {
+    channel: { type: String as PropType<Values<typeof ChannelType>>, default: ChannelType.dml },
+  },
+  setup(props, context) {
+    const page = ref({
+      globalMenus: [
+        { title: "TV", target: "_self", channel: ChannelType.dtv, active: false },
+        { title: "Mall", channel: ChannelType.dml, active: false },
+        { title: "Education", target: "_self", channel: ChannelType.ded, active: false },
+        { title: "Job", target: "_self", channel: ChannelType.djb, active: false },
+        { title: "Software", target: "_self", channel: ChannelType.dsw, active: false },
+        { title: "Interior", target: "_self", channel: ChannelType.dit, active: false },
+        { title: "onlineEdu", target: "_self", channel: ChannelType.dme, active: false },
+      ],
+      gnb: {
+        brand: { dentist: { show: false } },
+        avatar: { userName: "홍길동" },
+        userMenu: [{ title: "마이페이지" }, { title: "계정정보관리" }, { title: "로그아웃" }],
+        activeChannel: "dml",
       },
+    });
+    let channel = toRefs(props).channel.value;
+    // select btn By channel
+    let a = page.value.globalMenus.find((e) => e.channel == channel);
+    if (a != undefined) a.active = true;
+    // select gnb line color By channel
+    page.value.gnb.activeChannel = channel;
+
+    /** GNB서비스 클릭 시 */
+    const onClickGnbService = (event: Event, menu) => {
+      page.value.globalMenus.forEach((e) => (e.active = menu.title == e.title ? true : false));
+      page.value.globalMenus = [...page.value.globalMenus];
+      page.value.gnb.activeChannel = menu.channel;
+      context.emit("onClickGnbService", menu);
     };
+    /**통합검색 클릭 시 */
+    const onClickLoginCommSearch = (event: Event) => {
+      context.emit("onClickLoginCommSearch", event);
+    };
+    return { page, exposeAssertsPath, onClickGnbService, onClickLoginCommSearch };
   },
   methods: {
-    onClickGnbService(event: Event, menu) {
-      this.page.globalMenus.forEach((e) => (e.active = menu.title == e.title ? true : false));
-      this.page.globalMenus = [...this.page.globalMenus];
-      this.$emit("onClickGnbService", menu);
-    },
-
-    signin() {
-      location.href = process.env.VUE_APP_HOSTNAME_MEMBER_WEB + "/signin/id?returnUrl=" + location.href;
+    /** 로그인 클릭 시 */
+    onClickLogin(event: Event) {
+      this.$emit("onClickLogin", event);
     },
     logout() {
       location.reload();
@@ -99,78 +104,128 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import "@/assets/styles/_variables.scss";
-.gnb-wrap {
-  border-bottom: 1px solid $primary;
-  height: 50px;
-  background: $white;
-  .inner {
-    height: 50px;
+@mixin channel-line($channel) {
+  border-bottom: 1px solid $channel;
+}
+@mixin channel-bg($color, $colorLight) {
+  &.v-btn--active {
+    &::before {
+      background: linear-gradient(to right, $color, $colorLight);
+    }
   }
-  .gnb-menus-wrap {
-    margin: 0 !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 49px;
-  }
-  .gnb-menus.col {
-    padding: 0 !important;
-  }
-  .gnb-menus-btn {
-    position: relative;
-    font-size: 16px !important;
-    color: $font-lighten1 !important;
-    font-weight: 700;
-    height: 50px !important;
-    line-height: 50px;
+}
+:root {
+  --height: 4.167rem; //50px
+}
+::v-deep {
+  .v-btn {
     border-radius: 0;
-    padding: 0 22px;
+    letter-spacing: -0.042rem; //-0.5px
+    &.v-btn--size-large {
+      height: 4.083rem; //49px
+      border-radius: 0;
+      letter-spacing: -0.042rem; //-0.5px
+    }
   }
-  .gnb-menus-btn.v-btn--active {
-    font-weight: 700;
-    color: $font-darken1;
-  }
-  .gnb-menus-btn.v-btn--active::before {
-    content: "";
-    background-color: $white !important;
-    box-shadow: 1px -4px 6px 3px rgb(0 0 0);
-    opacity: 0.2;
-  }
-  .gnb-menus-btn.v-btn--active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
+}
+.comm-gnb {
+  &-wrap {
+    @include flex(row, center, center);
     width: 100%;
-    height: 4px;
-    background: linear-gradient(to right, #c01186, #f977ca);
+    height: var(--height);
+    background: $white;
+
+    &.dtv {
+      @include channel-line($dtv);
+    }
+    &.dml {
+      @include channel-line($dml);
+    }
+    &.ded {
+      @include channel-line($ded);
+    }
+    &.djb {
+      @include channel-line($djb);
+    }
+    &.dsw {
+      @include channel-line($dsw);
+    }
+    &.dit {
+      @include channel-line($dit);
+    }
+    &.dme {
+      @include channel-line($dme);
+    }
+
+    border-bottom: 1px solid $comm;
   }
-  .gnb-search-wrap {
-    display: flex;
-    border: 1px solid #e1e1e1;
-    background-color: #ededed;
+  &-inner {
+    @include flex(row, center, space-between);
+    min-width: 1904px;
+    margin: 0 auto;
+    height: 100%;
   }
-  .gnb-search-wrap .v-text-field {
-    margin-top: 0 !important;
+  &-brand {
+    > img {
+      width: 75px;
+    }
+    margin-right: 1.667rem; //20px
   }
-  .gnb-search-wrap .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
-    border-color: rgba(0, 0, 0, 0) !important;
+  &-menus {
+    @include flex(row, center, flex-start);
+    flex: 1;
+    > .v-btn {
+      position: relative;
+      font-weight: 600;
+      color: $font-darken1;
+      font-size: 16px;
+
+      &.dtv {
+        @include channel-bg($dtv, $dtv-lighten1);
+      }
+      &.dml {
+        @include channel-bg($dml, $dml-lighten1);
+      }
+      &.ded {
+        @include channel-bg($ded, $ded-lighten1);
+      }
+      &.djb {
+        @include channel-bg($djb, $djb-lighten1);
+      }
+      &.dsw {
+        @include channel-bg($dsw, $dsw-lighten1);
+      }
+      &.dit {
+        @include channel-bg($dit, $dit-lighten1);
+      }
+      &.dme {
+        @include channel-bg($dme, $dme-lighten1);
+      }
+      &.comm {
+        @include channel-bg($comm, $comm-lighten1);
+      }
+
+      &.v-btn--active {
+        background: $white;
+        box-shadow: 1px -6px 10px 1px rgba(0, 0, 0, 0.24);
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          bottom: 0;
+          width: 100%;
+          height: 4px;
+          background: linear-gradient(to right, $comm, $comm-lighten1);
+        }
+      }
+    }
   }
-  .avatar .v-card {
-    display: flex !important;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .dental-name {
-    color: #492999;
-    font-size: 11px;
-  }
-  .gnb-personal {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0 !important;
-    padding: 0;
+  &-personal {
+    @include flex(row, center, flex-start);
+    .v-btn {
+      font-size: 1.083rem; // 13px
+      color: #555;
+    }
   }
 }
 </style>

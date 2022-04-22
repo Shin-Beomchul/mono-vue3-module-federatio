@@ -1,9 +1,5 @@
 
 /* Colors */
-$primary: #e41485;
-$primary-darken1: #c3026b;
-$primary-lighten1: #eb439f;
-$primary-lighten2: #ff79c3;
 $scondary: #424242;
 $secondary-darken1: #232121;
 $secondary-lighten1: #5f5f5f;
@@ -11,14 +7,37 @@ $font-color: #333333;
 $font-darken1: #000000;
 $font-lighten1: #666666;
 $font-lighten2: #999999;
+
 $border-color: #c1c1c1;
 $border-lighten1: #e1e1e1;
-$line: #e8e8e8;
 $border-lighten2: #dcdcdc;
-$btn-boorder-active: #666666;
 $divider: #e1e1e1;
-$bg-main: #fafafa;
 $white: #ffffff;
 $black: #000000;
-$dark-grey: #424242,
+
+/*색상 임의 지정 */
+$dtv: #6e15cf;
+$dtv-lighten1: #8f36ee;
+$dml: #e41485;
+$dml-lighten1: #eb439f;
+$ded: #283fdb;
+$ded-lighten1: #32b5d6;
+$djb: #3759a5;
+$djb-lighten1: #46a8ad;
+$dsw: #5e4add;
+$dsw-lighten1: #6b63da;
+$dit: #3298aa;
+$dit-lighten1: #3eabbe;
+$dme: #b46d0f;
+$dme-lighten1: #c4730b;
+$comm: #6ba6ff;
+$comm-lighten1: #83b5ff;
+
+
+@mixin flex ($direction, $align, $justify) { 
+    display: flex; 
+    flex-direction: $direction; 
+    align-items: $align; 
+    justify-content: $justify; 
+}
 

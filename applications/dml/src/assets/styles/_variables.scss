@@ -1,0 +1,28 @@
+
+/* Colors */
+$primaryDml: #e41485;
+$primary-darken1: #c3026b;
+$primary-lighten1: #eb439f;
+$primary-lighten2: #ff79c3;
+$scondary: #424242;
+$secondary-darken1: #232121;
+$secondary-lighten1: #5f5f5f;
+$font-color: #333333;
+$font-darken1: #000000;
+$font-lighten1: #666666;
+$font-lighten2: #999999;
+
+$border-color: #c1c1c1;
+$border-lighten1: #e1e1e1;
+$border-lighten2: #dcdcdc;
+$divider: #e1e1e1;
+$white: #ffffff;
+$black: #000000;
+
+@mixin flex ($direction, $align, $justify) { 
+    display: flex; 
+    flex-direction: $direction; 
+    align-items: $align; 
+    justify-content: $justify; 
+}
+

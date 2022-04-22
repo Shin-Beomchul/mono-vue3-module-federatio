@@ -13,7 +13,7 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "noImplicitAny": false, //any타입 금지 여부
+    "noImplicitAny": false,
     "types": [
       "webpack-env"
     ],

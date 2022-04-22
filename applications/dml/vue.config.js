@@ -1,6 +1,7 @@
 const { defineConfig } = require("@vue/cli-service");
 const webpack = require("webpack");
-
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
 module.exports = defineConfig({
   pages: {
     index: {
@@ -14,7 +15,7 @@ module.exports = defineConfig({
         name: "dml",
         filename: "remoteEntry.js",
         remotes: {
-          common: "common@http://localhost:2201/remoteEntry.js",
+          common: "common@" + process.env.VUE_APP_COMM_HOSTNAME + "/remoteEntry.js",
         },
         shared: {
           vue: {
@@ -26,6 +27,17 @@ module.exports = defineConfig({
   },
 
   transpileDependencies: true,
+
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+            @import "@/assets/styles/_variables.scss";
+        `,
+      },
+    },
+    sourceMap: true,
+  },
 
   pluginOptions: {
     vuetify: {

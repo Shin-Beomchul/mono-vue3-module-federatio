@@ -1,19 +1,14 @@
 <template>
-  <v-app>
+ <div class="home-view-wrap">
     <comm-gnb
+      channel="dml"
       @onClickGnbService="onClickGnbService"
       @onClickLogin="onClickLogin"
       @onClickLoginCommSearch="onClickLoginCommSearch"
-      @onChangeLang="onChangeLang"
     />
-    <v-main class="content-main">
-      <v-container fluid class="pa-0" id="app-main-container">
-        <router-view />
-      </v-container>
-    </v-main>
+    <router-view />
     <comm-footer id="footer" @onFooterItemClick="onFooterItemClick" />
-  </v-app>
-  <!-- Footer -->
+ </div>
 </template>
 
 <script lang="ts">
@@ -22,11 +17,8 @@
  * @description DML App(host)
  */
 import { defineComponent, defineAsyncComponent } from "vue";
-
-import { loadLocaleMessages, setI18nLanguage } from "@/i18n/i18n";
-import { i18n } from "@/main";
-import { useAppStore } from "./store/pinia/app/AppStore";
-import { useProductStore } from "./store/pinia/product/productStore";
+import { useAppStore } from "@/store/pinia/app/AppStore";
+import { useProductStore } from "@/store/pinia/product/productStore";
 const CommGnb = defineAsyncComponent(() => import("common/CommGnb.vue"));
 const CommFooter = defineAsyncComponent(() => import("common/CommFooter.vue"));
 export default defineComponent({
@@ -36,18 +28,13 @@ export default defineComponent({
     const appStore = useAppStore();
     const productStore = useProductStore();
     /** GNB서비스 클릭 시 */
-    const onClickGnbService = (menu: { title; target }) => {
-      console.log("serviceId", menu);
+    const onClickGnbService = (menu: { title: string, target: string, channel: string, active: boolean }) => {
+      console.log("serviceMenu", menu);
     };
     /** 로그인 클릭 시 */
     const onClickLogin = () => {
       appStore.login({ userName: "홍길동", token: "ase@232" });
       console.log("onClickLogin");
-    };
-    /** 언어변경 */
-    const onChangeLang = async (lang: string) => {
-      await loadLocaleMessages(i18n, lang);
-      setI18nLanguage(i18n, lang);
     };
     /**통합검색 클릭 시 */
     const onClickLoginCommSearch = () => {
@@ -62,7 +49,6 @@ export default defineComponent({
       productStore,
       onClickGnbService,
       onClickLogin,
-      onChangeLang,
       onClickLoginCommSearch,
       onFooterItemClick,
     };
@@ -70,13 +56,14 @@ export default defineComponent({
   methods: {},
 });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss" scoped>
+.home-view {
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

@@ -1,6 +1,7 @@
 // Styles
 import "@mdi/font/css/materialdesignicons.css";
 import "vuetify/styles";
+// import icons from "@/plugins/icons";
 
 // Vuetify
 import { createVuetify, ThemeDefinition } from "vuetify";
@@ -23,5 +24,11 @@ export default createVuetify({
       mTheme,
     },
   },
+  //   iconfont: "mdi",
+  //   icons: {
+  //     values: Object.keys(icons).reduce((accm, iconName) => {
+  //       return { ...accm, [iconName]: { component: icons[iconName] } };
+  //     }, {}),
+  //   },
 });
 // https://next.vuetifyjs.com/en/features/icon-fonts/

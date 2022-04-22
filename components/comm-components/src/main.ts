@@ -6,5 +6,7 @@ import { createPinia } from "pinia";
 const pinia = createPinia();
 import vuetify from "./plugins/vuetify";
 import { loadFonts } from "./plugins/webfontloader";
+import "@/assets/styles/global.scss";
+
 loadFonts();
 createApp(App).use(store).use(vuetify).use(pinia).use(router).mount("#app");

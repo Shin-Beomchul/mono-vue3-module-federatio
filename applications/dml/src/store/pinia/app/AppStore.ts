@@ -7,6 +7,8 @@ export const useAppStore = defineStore({
   state: (): AppState => ({
     userName: undefined,
     isLogin: false,
+    isHttpCache: true,
+    isStoreCache: true
   }),
 
   actions: {

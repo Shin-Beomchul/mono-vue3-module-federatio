@@ -15,5 +15,6 @@
     "eslint.validate": [
         "javascript",
         "typescript"
-    ]
+    ],
+    "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true
 }

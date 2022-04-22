@@ -1366,12 +1366,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@god/comm-components@workspace:components/comm-components"
   dependencies:
-    "@god/lru-cache": ^1.0.0
-    "@god/mock-service": ^1.0.1
-    "@god/type-utils": ^1.0.1
     "@mdi/font": 5.9.55
     "@types/webfontloader": ^1.0.0
     "@vue/cli-plugin-babel": 5.0.4
+    "@vue/cli-plugin-eslint": ~5.0.0
     "@vue/cli-plugin-router": 5.0.4
     "@vue/cli-plugin-typescript": 5.0.4
     "@vue/cli-plugin-vuex": 5.0.4
