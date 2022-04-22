@@ -1,11 +1,11 @@
 # `lru-cache`
 
 > sessionLruCache : 휘발성(탭, 브라우저 종료 시 초기화)
-> localLruCache : 비휘발성(scope: domain)
+> ocalLruCache : 비휘발성(scope: domain)
 
 ## Usage
-
-- ../mono/Applications/someApp
+```
+- ../mono/Applications/*App
   import { PersistentLruCache, PresitentType } from "@god/lru-cache";
 
   ...
@@ -17,9 +17,11 @@
   persistentLruCache.getStorage("Key"); // 가져오기 // 1
   persistentLruCache.delStorage("key"); // 삭제
   persistentLruCache.clearCaches(); // 초기화
+  ```
 
 ## 응용 - vue플러그인 적용
 
+```typescript
 /\*_ sessionLruCache _/
 Vue.prototype.$sessionLruCache = new PersistentLruCache(PresitentType.Session, { max: 50 });
 
@@ -40,3 +42,4 @@ $sessionLruCache: PersistentLruCache<any>;
 $localLruCache: PersistentLruCache<any>;
 }
 }
+```
