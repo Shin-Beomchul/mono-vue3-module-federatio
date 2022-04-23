@@ -107,7 +107,7 @@ Name         | Version    |
  
 
  ## 주의사항
-  vuetify3 <-> Master Branch 전한 시 다음과정 반드시 수행 할것.
+  vuetify3 <-> Master Branch 전환 시 다음과정 반드시 수행 할것.
    1. root > node_modules 삭제 
    2. root > yarn install 
    3. yarn serve:comm
