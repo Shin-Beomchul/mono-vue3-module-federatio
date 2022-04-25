@@ -6,7 +6,6 @@ import { createPinia } from "pinia";
 import { setupI18n } from "./i18n/i18n";
 import enMessages from "@/i18n/locales/en.json";
 import PiniaLogger from "pinia-logger";
-import("common/global.scss").catch((e) => console.error("TODO report to Server", e)); // from remote
 
 /** i18n */
 const i18n = setupI18n({
