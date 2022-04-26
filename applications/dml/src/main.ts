@@ -9,7 +9,9 @@ import koMessages from "@/i18n/locales/ko.json";
 import PiniaLogger from "pinia-logger";
 import vuetify from "./plugins/vuetify";
 import "@/assets/styles/global.scss";
-import("common/global.scss").catch(e => {console.error("report to Server",e);}); // from remote
+import("common/global.scss").catch((e) => {
+  console.error("report to Server", e);
+}); // from remote
 loadFonts();
 /** i18n */
 const i18n = setupI18n({

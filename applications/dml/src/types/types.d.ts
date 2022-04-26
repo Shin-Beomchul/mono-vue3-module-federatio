@@ -1,1 +1,1 @@
-declare module "common/global.scss"
+declare module "common/global.scss";

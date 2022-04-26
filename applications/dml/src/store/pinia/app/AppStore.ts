@@ -8,7 +8,7 @@ export const useAppStore = defineStore({
     userName: undefined,
     isLogin: false,
     isHttpCache: true,
-    isStoreCache: true
+    isStoreCache: true,
   }),
 
   actions: {

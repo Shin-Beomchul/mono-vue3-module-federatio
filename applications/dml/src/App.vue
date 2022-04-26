@@ -1,5 +1,5 @@
 <template>
- <div class="home-view-wrap">
+  <div class="home-view-wrap">
     <comm-gnb
       channel="dml"
       @onClickGnbService="onClickGnbService"
@@ -8,7 +8,7 @@
     />
     <router-view />
     <comm-footer id="footer" @onFooterItemClick="onFooterItemClick" />
- </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -28,7 +28,7 @@ export default defineComponent({
     const appStore = useAppStore();
     const productStore = useProductStore();
     /** GNB서비스 클릭 시 */
-    const onClickGnbService = (menu: { title: string, target: string, channel: string, active: boolean }) => {
+    const onClickGnbService = (menu: { title: string; target: string; channel: string; active: boolean }) => {
       console.log("serviceMenu", menu);
     };
     /** 로그인 클릭 시 */
