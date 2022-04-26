@@ -49,6 +49,7 @@ module.exports = defineConfig({
   },
   devServer: {
     headers: {
+      historyApiFallback: true,
       "Access-Control-Allow-Origin": "*", // 운영 전환 시 서버측에서 설정 필요.
     },
   },
