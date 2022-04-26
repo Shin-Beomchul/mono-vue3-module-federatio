@@ -70,7 +70,7 @@ Name         | Version    |
 
 ## plugins
 - ESLint
-- Vetur
+- Volar v0.34.6
 - Prettier
 
 
