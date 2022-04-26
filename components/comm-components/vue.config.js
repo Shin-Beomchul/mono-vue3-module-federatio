@@ -33,6 +33,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     headers: {
+      historyApiFallback: true,
       "Access-Control-Allow-Origin": "*", // product then, nginx
     },
   },
